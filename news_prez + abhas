@@ -1,4 +1,0 @@
-group = bucket(rank(cap),range="0,1,0.1667");
-m = regression_neut(ts_backfill(vec_avg(nws12_prez_4l),504)*ts_mean(log(volume),63)*(1+ts_rank(-debt_st,63))*(rank(ts_backfill(vec_avg(nws12_prez_1s),126))),ts_av_diff(close,63));
-a = group_neutralize(trade_when(volume > adv20 , m , - 1),group);
-trade_when(ts_rank(volume,5)>0.55  && rank(ts_backfill(vec_avg(nws12_mainz_range),252))<0.9,a,-1)
